@@ -1,0 +1,135 @@
+<!-- 
+Proyecto equivalente a Adobe Muse.
+La hoja de estilos (estilos.css) funciona como página maestra,
+definiendo el layout global del sitio (header, menú y footer).
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contacto</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+<header id="encabezado">
+<h1>Contacto</h1>
+</header>
+
+<nav class="menu">
+<a href="index.html">Inicio</a>
+<a href="info.html">Informes</a>
+<a href="galeria.html">Catálogo</a>
+<a href="proyectos.html">Ubicación</a>
+<a href="contacto.html">Contacto</a>
+</nav>
+
+<div class="container">
+<div class="row">
+
+<!-- INFORMACIÓN -->
+<div class="col-6">
+<div class="articulo">
+
+<h2>Contáctame</h2>
+
+<p><strong>Email:</strong></p>
+<p><a href="mailto:FerreOasi12@gmail.com">FerreOasi12@gmail.com</a></p>
+
+<p><strong>Teléfono Ferretería:</strong></p>
+<p><a href="tel:+525569856898">656-985-68-98</a></p>
+
+<p><strong>Ubicación:</strong></p>
+<p>Ciudad Juárez, México</p>
+
+</div>
+</div>
+
+<!-- FOTO -->
+<div class="col-6">
+<div class="articulo" style="text-align:center;">
+
+<img src="img/Yo.png" alt="Mi foto" class="foto-perfil">
+
+<h3 style="margin-top:10px;">Ferreteria Oasis</h3>
+
+</div>
+</div>
+
+</div>
+
+<!-- FORMULARIO DE CONTACTO -->
+<div id="formulario">
+<div class="articulo">
+<h2>📬 Envíanos un Mensaje</h2>
+
+<form class="form-contacto" onsubmit="enviarFormulario(event)">
+
+  <div class="campo">
+    <label for="nombre">Nombre completo</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+  </div>
+
+  <div class="campo">
+    <label for="email">Correo electrónico</label>
+    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+  </div>
+
+  <div class="campo">
+    <label for="telefono">Teléfono (opcional)</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="656-000-0000">
+  </div>
+
+  <div class="campo">
+    <label for="asunto">Asunto</label>
+    <select id="asunto" name="asunto">
+      <option value="">-- Selecciona un tema --</option>
+      <option value="productos">Consulta de productos</option>
+      <option value="precios">Precios y cotizaciones</option>
+      <option value="pedido">Seguimiento de pedido</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+  </div>
+
+  <button type="submit" class="btn-enviar">Enviar mensaje ✉️</button>
+
+</form>
+
+<div id="confirmacion" style="display:none; color:green; margin-top:15px; font-weight:bold;">
+  ✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<footer id="pie">
+<p>&copy; 2026 Ferreteria Oasis</p>
+</footer>
+
+<script>
+function enviarFormulario(e) {
+  e.preventDefault();
+  document.getElementById('confirmacion').style.display = 'block';
+  e.target.reset();
+  setTimeout(() => {
+    document.getElementById('confirmacion').style.display = 'none';
+  }, 5000);
+}
+</script>
+
+</body>
+</html>
